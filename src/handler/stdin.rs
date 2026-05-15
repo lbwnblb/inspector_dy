@@ -76,9 +76,14 @@ fn parse_command(input: &str, id: u64) -> Option<String> {
         let cmd = CdpCommand::evaluate(id, &js);
         println!("[send] 正在发送: {}", msg);
         Some(cmd.to_json())
+    } else if input == "monitor" {
+        let js = js_utils::build_monitor_js();
+        let cmd = CdpCommand::evaluate(id, &js);
+        println!("[monitor] 正在检查/重启消息监听...");
+        Some(cmd.to_json())
     } else {
         println!("未知命令: {}", input);
-        println!("可用: send <msg> | inspect | rehook | quit");
+        println!("可用: send <msg> | inspect | rehook | monitor | quit");
         None
     }
 }

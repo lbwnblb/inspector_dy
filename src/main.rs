@@ -21,6 +21,7 @@ async fn main() -> anyhow::Result<()> {
     println!("    send <消息内容>   — 发送消息");
     println!("    inspect           — 查看页面 DOM 结构");
     println!("    rehook            — 重新注入 Hook");
+    println!("    monitor           — 检查/重启消息监听");
     println!("    quit / exit       — 退出");
     println!("============================================");
     println!();
